@@ -14,9 +14,10 @@ jobs:
       with:
         fetch-depth: 1
         persist-credentials: false
+
     - name: Run OpenCode
       uses: anomalyco/opencode/github@latest
       with:
         model: opencode/big-pickle
         prompt: |
-          Check for library vulnerabilities
+          Check for library vulnerabilities, and create a PR if there are any recommended fixes
