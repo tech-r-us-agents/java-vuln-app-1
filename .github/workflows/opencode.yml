@@ -17,7 +17,10 @@ jobs:
 
     - name: Run OpenCode
       uses: anomalyco/opencode/github@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         model: opencode/big-pickle
+        use_github_token: true
         prompt: |
           Check for library vulnerabilities, and create a PR if there are any recommended fixes
